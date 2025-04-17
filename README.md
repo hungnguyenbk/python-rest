@@ -1,3 +1,4 @@
+```
 my_project/
 │── my_project/                # Thư mục chứa mã nguồn chính của dự án
 │   ├── __init__.py            # Định nghĩa thư mục thành module
@@ -23,3 +24,4 @@ my_project/
 │── .env                       # Biến môi trường (API_KEY, DATABASE_URL)
 │── .gitignore                  # File chứa danh sách các file bị bỏ qua khi commit lên Git
 │── setup.py                   # Script cài đặt package nếu dự án là một module Python
+```
