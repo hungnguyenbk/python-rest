@@ -1,0 +1,2581 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Sun Openstack Load balancer sdk",
+        "description": "Openstack loadbalancer Octavia sdk",
+        "version": "1.0.0"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/openstack/loadbalancer/api/v1/": {
+            "get": {
+                "operationId": "ListVersion",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "requestBody": {},
+                "tags": [
+                    "sun-lb-sdk"
+                ]
+            }
+        },
+        "/v1/lbaas/healthmonitors/{ProjectId}": {
+            "get": {
+                "operationId": "GetListHealthMonitor",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "monitors"
+                ]
+            },
+            "post": {
+                "operationId": "CreateHealthMonitor",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateHealthMonitorReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "monitors"
+                ]
+            }
+        },
+        "/v1/lbaas/healthmonitors/{ProjectId}/{Id}": {
+            "get": {
+                "operationId": "GetHeathMonitorDetail",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "monitors"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteHealthMontior",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteHealthMonitorReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "monitors"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateHealthMonitor",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateHealthMonitorReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "monitors"
+                ]
+            }
+        },
+        "/v1/lbaas/l7policies/{ProjectId}": {
+            "get": {
+                "operationId": "GetListL7Policies",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/policies"
+                ]
+            },
+            "post": {
+                "operationId": "CreateL7Policies",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateL7PoliciesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/policies"
+                ]
+            }
+        },
+        "/v1/lbaas/l7policies/{ProjectId}/{Id}": {
+            "get": {
+                "operationId": "GetL7PoliciesDetail",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/policies"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteL7Policies",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteL7PoliciesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/policies"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateL7Policies",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateL7PoliciesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/policies"
+                ]
+            }
+        },
+        "/v1/lbaas/l7policies/{ProjectId}/{L7PoliciesId}/rules": {
+            "get": {
+                "operationId": "GetListL7Rules",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "L7PoliciesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/rules"
+                ]
+            },
+            "post": {
+                "operationId": "CreateL7Rules",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "L7PoliciesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateL7RulesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/rules"
+                ]
+            }
+        },
+        "/v1/lbaas/l7policies/{ProjectId}/{L7PoliciesId}/rules/{RuleId}": {
+            "get": {
+                "operationId": "GetL7RulesDetail",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "L7PoliciesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "RuleId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/rules"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteL7Rules",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "L7PoliciesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "RuleId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteL7RulesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/rules"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateL7Rules",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "L7PoliciesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "RuleId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateL7RulesReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "l7/rules"
+                ]
+            }
+        },
+        "/v1/lbaas/listener/{ProjectId}": {
+            "get": {
+                "operationId": "GetListenerProject",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "listener"
+                ]
+            },
+            "post": {
+                "operationId": "CreateListener",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateListenerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "listener"
+                ]
+            }
+        },
+        "/v1/lbaas/listener/{ProjectId}/{Id}": {
+            "get": {
+                "operationId": "GetListener",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "listener"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteListener",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteListenerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "listener"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateListener",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateListenerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "listener"
+                ]
+            }
+        },
+        "/v1/lbaas/pools/{ProjectId}": {
+            "post": {
+                "operationId": "CreatePools",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreatePoolReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "pools"
+                ]
+            }
+        },
+        "/v1/lbaas/pools/{ProjectId}/{Id}": {
+            "get": {
+                "operationId": "GetPool",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "pools"
+                ]
+            },
+            "delete": {
+                "operationId": "DeletePools",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeletePoolReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "pools"
+                ]
+            },
+            "put": {
+                "operationId": "UpdatesPools",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdatePoolReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "pools"
+                ]
+            }
+        },
+        "/v1/lbaas/pools/{ProjectId}/{Id}/members": {
+            "get": {
+                "operationId": "GetListMember",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            }
+        },
+        "/v1/lbaas/pools/{ProjectId}/{PoolId}/members": {
+            "post": {
+                "operationId": "CreateMember",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "PoolId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateMembersReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            },
+            "put": {
+                "operationId": "BatchMemberPools",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "PoolId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/BatchPoolMemberReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            }
+        },
+        "/v1/lbaas/pools/{ProjectId}/{PoolId}/members/{Id}": {
+            "get": {
+                "operationId": "GetDetailMember",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "PoolId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteMember",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "PoolId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteMemberReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateMember",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "PoolId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateMemberReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "members"
+                ]
+            }
+        },
+        "/v1/lbaas/{ProjectId}": {
+            "post": {
+                "operationId": "CreateLoadbalancer",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateLoadbalancerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "Loadbalancer"
+                ]
+            }
+        },
+        "/v1/lbaas/{ProjectId}/{Id}": {
+            "get": {
+                "operationId": "GetLoadbalancer",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "Loadbalancer"
+                ]
+            },
+            "delete": {
+                "operationId": "DeleteLoadbalancer",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteLoadbalancerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "Loadbalancer"
+                ]
+            },
+            "put": {
+                "operationId": "UpdateLoadbalancer",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateLoadbalancerReq"
+                        }
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "Loadbalancer"
+                ]
+            }
+        },
+        "/v1/lbaas/{ProjectId}/{Id}/tree": {
+            "get": {
+                "operationId": "GetLoadbalancerTree",
+                "responses": {
+                    "200": {
+                        "description": "A successful response.",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "ProjectId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "query",
+                        "required": false,
+                        "type": "invalid",
+                        "format": "UNKNOWN"
+                    }
+                ],
+                "requestBody": {},
+                "tags": [
+                    "Loadbalancer"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "AdditionalVip": {
+            "type": "object",
+            "properties": {
+                "subnetId": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                }
+            },
+            "title": "AdditionalVip",
+            "required": [
+                "subnetId",
+                "ipAddress"
+            ]
+        },
+        "BaseParamsReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "title": "BaseParamsReq",
+            "required": [
+                "ProjectId"
+            ]
+        },
+        "BatchPoolMemberReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "PoolId": {
+                    "type": "string"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneralMemberBaseField"
+                    }
+                }
+            },
+            "title": "BatchPoolMemberReq",
+            "required": [
+                "PoolId",
+                "members"
+            ]
+        },
+        "ClientListenerDto": {
+            "type": "object",
+            "properties": {
+                "clientAuthentication": {
+                    "type": "string"
+                },
+                "clientCaTlsContainerRef": {
+                    "type": "string"
+                },
+                "clientCrlContainerRef": {
+                    "type": "string"
+                }
+            },
+            "title": "ClientListenerDto"
+        },
+        "CreateHealthMonitorReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "": {
+                    "$ref": "#/definitions/HealthMonitorGeneralFieldDto"
+                }
+            },
+            "title": "CreateHealthMonitorReq"
+        },
+        "CreateL7PoliciesReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "listenerId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "redirectHttpCode": {
+                    "type": "string"
+                },
+                "redirectPoolId": {
+                    "type": "string"
+                },
+                "redirectPrefix": {
+                    "type": "string"
+                },
+                "redirectUrl": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "CreateL7PoliciesReq",
+            "required": [
+                "action",
+                "adminStateUp",
+                "listenerId",
+                "name"
+            ]
+        },
+        "CreateL7RulesReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "L7policiesId": {
+                    "type": "string"
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/L7Rules"
+                    }
+                }
+            },
+            "title": "CreateL7RulesReq",
+            "required": [
+                "ProjectId",
+                "L7policiesId",
+                "rules"
+            ]
+        },
+        "CreateListenerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "": {
+                    "$ref": "#/definitions/Listener"
+                }
+            },
+            "title": "CreateListenerReq"
+        },
+        "CreateLoadbalancerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "availabilityZone": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "flavorId": {
+                    "type": "string"
+                },
+                "listeners": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Listener"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "projectId": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string",
+                    "default": "amphora"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "vipAddress": {
+                    "type": "string"
+                },
+                "vipNetworkId": {
+                    "type": "string"
+                },
+                "vipPortId": {
+                    "type": "string"
+                },
+                "vipQosPolicyId": {
+                    "type": "string"
+                },
+                "vipSubnetId": {
+                    "type": "string"
+                },
+                "additionalVips": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AdditionalVip"
+                    }
+                }
+            },
+            "title": "CreateLoadbalancerReq",
+            "required": [
+                "adminStateUp",
+                "flavorId",
+                "name",
+                "projectId",
+                "provider"
+            ]
+        },
+        "CreateMembersReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "PoolId": {
+                    "type": "string"
+                },
+                "": {
+                    "$ref": "#/definitions/GeneralMemberBaseField"
+                }
+            },
+            "title": "CreateMembersReq",
+            "required": [
+                "ProjectId",
+                "PoolId"
+            ]
+        },
+        "CreatePoolReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "": {
+                    "$ref": "#/definitions/GeneralPoolBaseField"
+                },
+                "": {
+                    "$ref": "#/definitions/TlsPoolField"
+                }
+            },
+            "title": "CreatePoolReq"
+        },
+        "DeleteHealthMonitorReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "DeleteHealthMonitorReq"
+        },
+        "DeleteL7PoliciesReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "DeleteL7PoliciesReq"
+        },
+        "DeleteL7RulesReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "L7policiesId": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                }
+            },
+            "title": "DeleteL7RulesReq",
+            "required": [
+                "ProjectId",
+                "L7policiesId",
+                "RuleId"
+            ]
+        },
+        "DeleteListenerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "DeleteListenerReq"
+        },
+        "DeleteLoadbalancerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "DeleteLoadbalancerReq"
+        },
+        "DeleteMemberReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "PoolId": {
+                    "type": "string"
+                }
+            },
+            "title": "DeleteMemberReq",
+            "required": [
+                "PoolId"
+            ]
+        },
+        "DeletePoolReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "DeletePoolReq"
+        },
+        "GeneralMemberBaseField": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "backup": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "monitorAddress": {
+                    "type": "string"
+                },
+                "monitorPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "protocolPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "subnetId": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "weight": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "GeneralMemberBaseField",
+            "required": [
+                "name",
+                "adminStateUp",
+                "address",
+                "protocolPort"
+            ]
+        },
+        "GeneralPoolBaseField": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "protocol": {
+                    "type": "string"
+                },
+                "algorithm": {
+                    "type": "string"
+                },
+                "listenerId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "alpnProtocol": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "loadbalancerId": {
+                    "type": "string"
+                },
+                "sessionPersistence": {
+                    "type": "object"
+                }
+            },
+            "title": "GeneralPoolBaseField",
+            "required": [
+                "name",
+                "protocol",
+                "algorithm",
+                "adminStateUp",
+                "sessionPersistence"
+            ]
+        },
+        "GetHeathMonitorDetailReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetHeathMonitorDetailReq"
+        },
+        "GetL7PoliciesDetailReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetL7PoliciesDetailReq"
+        },
+        "GetL7RulesDetailReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "L7policiesId": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                }
+            },
+            "title": "GetL7RulesDetailReq",
+            "required": [
+                "ProjectId",
+                "L7policiesId",
+                "RuleId"
+            ]
+        },
+        "GetL7RulesReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "L7policiesId": {
+                    "type": "string"
+                }
+            },
+            "title": "GetL7RulesReq",
+            "required": [
+                "ProjectId",
+                "L7policiesId"
+            ]
+        },
+        "GetListHealthMonitorReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetListHealthMonitorReq"
+        },
+        "GetListL7PoliciesReq": {
+            "type": "object",
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "ListenerId": {
+                    "type": "string"
+                }
+            },
+            "title": "GetListL7PoliciesReq",
+            "required": [
+                "ProjectId",
+                "ListenerId"
+            ]
+        },
+        "GetListMemberReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetListMemberReq"
+        },
+        "GetListenerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetListenerReq"
+        },
+        "GetLoadbalancerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetLoadbalancerReq"
+        },
+        "GetMemberDetailReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "PoolId": {
+                    "type": "string"
+                }
+            },
+            "title": "GetMemberDetailReq",
+            "required": [
+                "PoolId"
+            ]
+        },
+        "GetPoolReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                }
+            },
+            "title": "GetPoolReq"
+        },
+        "HealthMonitorGeneralFieldDto": {
+            "type": "object",
+            "properties": {
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "delay": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "poolId": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "timeout": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "urlPath": {
+                    "type": "string"
+                },
+                "maxRestries": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "maxRestriesDown": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "domainName": {
+                    "type": "string"
+                },
+                "expectedCode": {
+                    "type": "string"
+                },
+                "httpMethod": {
+                    "type": "string"
+                },
+                "httpVersion": {
+                    "type": "number",
+                    "format": "double"
+                }
+            },
+            "title": "HealthMonitorGeneralFieldDto",
+            "required": [
+                "adminStateUp",
+                "delay",
+                "name",
+                "poolId",
+                "timeout",
+                "type",
+                "maxRestries"
+            ]
+        },
+        "HstsListenerDto": {
+            "type": "object",
+            "properties": {
+                "hstsIncludeSubDomains": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "hstsMaxAge": {
+                    "type": "string"
+                },
+                "hstsPreload": {
+                    "type": "boolean",
+                    "format": "boolean"
+                }
+            },
+            "title": "HstsListenerDto"
+        },
+        "L7Rules": {
+            "type": "object",
+            "properties": {
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "compareType": {
+                    "type": "string"
+                },
+                "invert": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "title": "L7Rules",
+            "required": [
+                "adminStateUp",
+                "compareType",
+                "type",
+                "value"
+            ]
+        },
+        "Listener": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/ListenerGeneralDto"
+                },
+                "": {
+                    "$ref": "#/definitions/TlsListenerDto"
+                },
+                "": {
+                    "$ref": "#/definitions/ClientListenerDto"
+                },
+                "": {
+                    "$ref": "#/definitions/HstsListenerDto"
+                },
+                "": {
+                    "$ref": "#/definitions/PoolsListenerDto"
+                }
+            },
+            "title": "Listener"
+        },
+        "ListenerGeneralDto": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "projectId": {
+                    "type": "string"
+                },
+                "protocol": {
+                    "type": "string"
+                },
+                "protocolPort": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "allowedCidr": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "insertHeaders": {
+                    "type": "object"
+                },
+                "loadbalancerId": {
+                    "type": "string"
+                },
+                "connectionLimit": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutClientData": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutMemberData": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutMemberConnect": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutTcpInspect": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "l7policies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "ListenerGeneralDto",
+            "required": [
+                "protocol",
+                "protocolPort",
+                "adminStateUp"
+            ]
+        },
+        "LoadbalancerUpdate": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "vipQosPolicyId": {
+                    "type": "string"
+                }
+            },
+            "title": "LoadbalancerUpdate",
+            "required": [
+                "adminStateUp"
+            ]
+        },
+        "PoolsListenerDto": {
+            "type": "object",
+            "properties": {
+                "defaultPoolId": {
+                    "type": "string"
+                }
+            },
+            "title": "PoolsListenerDto"
+        },
+        "Response": {
+            "type": "object",
+            "properties": {
+                "ok": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object"
+                }
+            },
+            "title": "Response",
+            "required": [
+                "ok",
+                "code",
+                "msg",
+                "data"
+            ]
+        },
+        "TlsListenerDto": {
+            "type": "object",
+            "properties": {
+                "defaultTlsContainerRef": {
+                    "type": "string"
+                },
+                "sniContainerRef": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tlsCipher": {
+                    "type": "string"
+                },
+                "tlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "TlsListenerDto"
+        },
+        "TlsPoolField": {
+            "type": "object",
+            "properties": {
+                "tlsCipher": {
+                    "type": "string"
+                },
+                "tlsEnabled": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "tlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tlsContainerRef": {
+                    "type": "string"
+                },
+                "caTlsContainerRef": {
+                    "type": "string"
+                },
+                "ctrlTlsContainerRef": {
+                    "type": "string"
+                }
+            },
+            "title": "TlsPoolField"
+        },
+        "UpdateHealthMonitorReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "delay": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "timeout": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "urlPath": {
+                    "type": "string"
+                },
+                "maxRestries": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "maxRestriesDown": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "expectedCode": {
+                    "type": "string"
+                },
+                "httpMethod": {
+                    "type": "string"
+                }
+            },
+            "title": "UpdateHealthMonitorReq",
+            "required": [
+                "adminStateUp"
+            ]
+        },
+        "UpdateL7PoliciesReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "listenerId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "redirectHttpCode": {
+                    "type": "string"
+                },
+                "redirectPoolId": {
+                    "type": "string"
+                },
+                "redirectPrefix": {
+                    "type": "string"
+                },
+                "redirectUrl": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "title": "UpdateL7PoliciesReq",
+            "required": [
+                "adminStateUp"
+            ]
+        },
+        "UpdateL7RulesReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "L7policiesId": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "compareType": {
+                    "type": "string"
+                },
+                "invert": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "title": "UpdateL7RulesReq",
+            "required": [
+                "L7policiesId",
+                "adminStateUp"
+            ]
+        },
+        "UpdateListenerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "allowedCidr": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "insertHeaders": {
+                    "type": "object"
+                },
+                "loadbalancerId": {
+                    "type": "string"
+                },
+                "connectionLimit": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutClientData": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutMemberData": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutMemberConnect": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timeoutTcpInspect": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "tlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "defaultTlsContainerRef": {
+                    "type": "string"
+                },
+                "sniContainerRef": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "defaultPoolId": {
+                    "type": "string"
+                }
+            },
+            "title": "UpdateListenerReq",
+            "required": [
+                "adminStateUp"
+            ]
+        },
+        "UpdateLoadbalancerReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "loadbalancer": {
+                    "$ref": "#/definitions/LoadbalancerUpdate"
+                }
+            },
+            "title": "UpdateLoadbalancerReq",
+            "required": [
+                "loadbalancer"
+            ]
+        },
+        "UpdateMemberReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "PoolId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean",
+                    "default": "true"
+                },
+                "monitorAddress": {
+                    "type": "string"
+                },
+                "monitorPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "weight": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "backup": {
+                    "type": "boolean",
+                    "format": "boolean"
+                }
+            },
+            "title": "UpdateMemberReq",
+            "required": [
+                "PoolId",
+                "adminStateUp"
+            ]
+        },
+        "UpdatePoolReq": {
+            "type": "object",
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/BaseParamsReq"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "algorithm": {
+                    "type": "string"
+                },
+                "listenerId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "adminStateUp": {
+                    "type": "boolean",
+                    "format": "boolean"
+                },
+                "alpnProtocol": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "loadbalancerId": {
+                    "type": "string"
+                },
+                "sessionPersistence": {
+                    "type": "object"
+                }
+            },
+            "title": "UpdatePoolReq",
+            "required": [
+                "algorithm",
+                "adminStateUp"
+            ]
+        }
+    },
+    "securityDefinitions": {
+        "apiKey": {
+            "type": "apiKey",
+            "description": "Enter JWT Bearer token **_only_**",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "security": [
+        {
+            "apiKey": []
+        }
+    ]
+}
